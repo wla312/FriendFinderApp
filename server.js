@@ -11,7 +11,7 @@ var path = require("path");
 var app = express();
 
 // set port to 8080 OR w/e port Heroku defines...
-var PORT = process.env.PORT || 8080;
+var port = process.env.PORT || 8080;
 
 // set up the express app to handle data parsing
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -22,8 +22,8 @@ require("./routes/htmlRoutes")(app);
 require("./routes/apiRoutes")(app);
 
 // listener / start server...
-app.listen(PORT, function(){
-	console.log("App listening on PORT: " + PORT);
+app.listen(port, function(){
+	console.log("App listening on PORT: " + port);
 });
 
 
